@@ -1,4 +1,4 @@
-import React, { Component, createContext } from "react";
+import React, { Component, createContext, useRef } from "react";
 
 export const LanguageContext = createContext();
 
@@ -21,3 +21,9 @@ export class LanguageProvider extends Component {
     );
   }
 }
+
+export const withLanguageContext = (Component) => (props) => (
+  <LanguageContext.Consumer ref={useRef("language-context")}>
+    {(value) => <Component languageContext={value} {...props} />}
+  </LanguageContext.Consumer>
+);
