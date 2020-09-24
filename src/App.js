@@ -5,7 +5,7 @@ import PageContent from "./PageContent";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
@@ -16,6 +16,6 @@ function App() {
       </LanguageProvider>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
